@@ -1,0 +1,30 @@
+@if (userGroups().length) {
+<app-virtual-scroll [items]="userGroups()" className="user-group" (itemsSliced)="onSlice($event)">
+  <div class="search">
+    <input id="search" type="search" placeholder="Search..." autofocus required [(ngModel)]="searchQuery"
+      (ngModelChange)="onFilterUsers()" />
+  </div>
+
+  @for(group of userGroupsSliced; track group.letter) {
+  <article class="user-group">
+    <div class="user-group__header">
+      <span><strong>{{ group.letter}}</strong></span>
+      <span><strong>{{ group.users.length }}</strong></span>
+    </div>
+
+    @if(group.users.length) {
+    <app-user-list [users]="group.users" />
+    } @else {
+    <article>
+      <span><i>No users matched search criteria</i></span>
+    </article>
+    }
+  </article>
+  }
+</app-virtual-scroll>
+
+} @else {
+<article class="user-group">
+  <p>Loading…</p>
+</article>
+}

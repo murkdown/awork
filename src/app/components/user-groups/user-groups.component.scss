@@ -1,0 +1,65 @@
+@import 'ease/ease-import.scss';
+
+:root {
+  --rad: .7rem;
+  --height: 5rem;
+}
+
+:host {
+  .groups-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .user-group {
+    background-color: $color-white;
+    border-radius: 18px;
+    border: 2px solid $color-sky;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 10px;
+    gap: 2rem;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      background-color: $color-fog;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .search {
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    height: var(--height);
+    border: 0;
+    color: var(--color-dark);
+    font-size: 1.2rem;
+  }
+
+  input[type="search"] {
+    outline: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    appearance: none;
+    z-index: 1;
+    position: relative;
+  }
+}

@@ -1,0 +1,5 @@
+<app-virtual-scroll [items]="users()" (itemsSliced)="onSlice($event)">
+  @for (user of usersSliced; track user.phone) {
+  <app-user-item [user]="user" [allUsers]="users()" />
+  }
+</app-virtual-scroll>

@@ -1,0 +1,20 @@
+<div class="user-item" (click)="expand()">
+  <div class="user-info">
+    <img class="user-info__image" [src]="user().image" />
+    <p class="user-info__name">
+      {{ user().firstname }} {{ user().lastname }}
+    </p>
+    <p class="user-info__email">{{ user().email }}</p>
+    <p class="user-info__phone">{{ user().phone }}</p>
+    <p class="user-info__nat">{{ user().nat }} ({{ nationalitiesCount }})</p>
+  </div>
+  @if(isExpanded()) {
+  <div class="details">
+    <span><strong>Date of Birth:</strong> {{ user().dob?.date | date }}</span>
+    <span><strong>Gender:</strong> {{ user().gender | titlecase }}</span>
+  </div>
+  }
+
+
+
+</div>
