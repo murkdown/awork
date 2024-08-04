@@ -36,3 +36,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Problem solution
+Added web-worker to parse results.
+Added cache to avoid doing the same request to avoid API throttling.
+Results are grouped by letter.
+Added virtual scrolling on both groups and users.
+Added search based on last name.
+
+Web is hosted on Vercel: https://awork.vercel.app/
